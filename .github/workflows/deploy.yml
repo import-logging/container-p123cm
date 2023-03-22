@@ -57,7 +57,6 @@ jobs:
           amber exec -- sh -c 'ssh dokku@$DOKKU_HOST -C $CONTAINER_HOSTING_API_KEY "dokku config:set --no-restart container-p123cm DB_PASSWORD=$DJANGO_DB_PASSWORD"'
           amber exec -- sh -c 'ssh dokku@$DOKKU_HOST -C $CONTAINER_HOSTING_API_KEY "dokku config:set --no-restart container-p123cm DB_PORT=$DJANGO_DB_PORT"'
 
-          amber exec -- sh -c 'ssh dokku@$DOKKU_HOST -C $CONTAINER_HOSTING_API_KEY dokku apps:unlock container-p123cm'
           amber exec -- sh -c 'ssh dokku@$DOKKU_HOST -C $CONTAINER_HOSTING_API_KEY dokku git:sync --build container-p123cm https://github.com/import-logging/container-p123cm.git main'
           # Assign letsencrypt wildcard certificate
           amber exec -- sh -c 'ssh dokku@$DOKKU_HOST -C "$CONTAINER_HOSTING_API_KEY dokku certs:add container-p123cm < cert-key.tar"'
