@@ -2,7 +2,6 @@ services:
   app:
     stdin_open: true
     tty: true
-    image: container-p123cm
     build:
       context: ./src
     ports:
