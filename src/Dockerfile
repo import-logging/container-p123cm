@@ -1,0 +1,5 @@
+FROM python:3.8.16-slim
+
+COPY app.py app.py
+
+CMD app.py
